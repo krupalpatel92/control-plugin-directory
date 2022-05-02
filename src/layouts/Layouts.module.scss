@@ -1,0 +1,17 @@
+@import 'assets/scss/_variables';
+.layout {
+	width: 100%;
+	min-height: 100vh;
+	display: flex;
+	&__sidebar {
+		width: 19vw;
+		background-color: #f1f1f1;
+		max-width: calc(100vw - 81vw);
+		background-color: $lightGray;
+	}
+	&__content {
+		width: 81vw;
+		max-width: calc(100vw - 19vw);
+		background-color: $white;
+	}
+}

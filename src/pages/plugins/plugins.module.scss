@@ -1,0 +1,15 @@
+.pluginPage {
+	&__title {
+		font-size: 20px;
+	}
+}
+
+.gridContent {
+	display: flex;
+	flex-wrap: wrap;
+	grid-gap: 1rem;
+	width: 100%;
+	&__item {
+		width: calc((100% / 3) - 1rem);
+	}
+}

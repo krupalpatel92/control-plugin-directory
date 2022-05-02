@@ -1,0 +1,18 @@
+@charset "utf-8";
+
+@import './includes/i_reset';
+@import './_variables';
+
+html {
+	font-size: 16px;
+	min-height: 100vh;
+}
+body {
+	font-size: 1em;
+	min-height: 100vh;
+	font-family: Arial, Helvetica, sans-serif;
+	color: $dark;
+	background-color: $white;
+	font-weight: 400;
+	line-height: 1.5;
+}

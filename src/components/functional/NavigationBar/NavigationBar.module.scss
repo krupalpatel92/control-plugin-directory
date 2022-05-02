@@ -1,0 +1,29 @@
+@import 'assets/scss/_variables.scss';
+.navigationBar {
+	display: flex;
+	flex-direction: column;
+	&__item {
+		display: flex;
+		align-items: center;
+		padding: 1.25rem;
+		border-left: 5px solid transparent;
+		transition: all 0.2s ease-in-out 0.2s;
+		color: #333;
+		text-transform: capitalize;
+		letter-spacing: 0.5px;
+		&:hover,
+		&--active {
+			background-color: #fff;
+			border-left-color: $red;
+			transition: all 0.2s ease-in-out 0.2s;
+		}
+		&__icon {
+			width: 1.875rem;
+			height: auto;
+			aspect-ratio: 1;
+			display: block;
+			margin-right: 1rem;
+			background-color: #333;
+		}
+	}
+}

@@ -1,0 +1,684 @@
+{
+	"openapi": "3.0.0",
+	"info": {
+		"title": "DataGuard",
+		"contact": {},
+		"version": "1.0"
+	},
+	"servers": [
+		{
+			"url": "https://dataguard.blob.core.windows.net",
+			"variables": {}
+		}
+	],
+	"paths": {
+		"/challenges/plugins/fe-challenge.json": {
+			"get": {
+				"tags": ["Plugins"],
+				"summary": "Plugin List",
+				"operationId": "PluginList",
+				"parameters": [
+					{
+						"name": "Content-Type",
+						"in": "header",
+						"description": "",
+						"required": true,
+						"style": "simple",
+						"schema": {
+							"enum": ["application/json"],
+							"type": "string",
+							"example": "application/json"
+						}
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "OK",
+						"headers": {
+							"Content-Length": {
+								"content": {
+									"text/plain": {
+										"schema": {
+											"type": "string",
+											"example": "2617"
+										},
+										"example": "2617"
+									}
+								}
+							},
+							"Content-MD5": {
+								"content": {
+									"text/plain": {
+										"schema": {
+											"type": "string",
+											"example": "H7pXY9nwAc/hvf4U9BKGNg=="
+										},
+										"example": "H7pXY9nwAc/hvf4U9BKGNg=="
+									}
+								}
+							},
+							"Last-Modified": {
+								"content": {
+									"text/plain": {
+										"schema": {
+											"type": "string",
+											"example": "Mon, 20 Jul 2020 14:26:32 GMT"
+										},
+										"example": "Mon, 20 Jul 2020 14:26:32 GMT"
+									}
+								}
+							},
+							"ETag": {
+								"content": {
+									"text/plain": {
+										"schema": {
+											"type": "string",
+											"example": "0x8D82CB8E662687A"
+										},
+										"example": "0x8D82CB8E662687A"
+									}
+								}
+							},
+							"Server": {
+								"content": {
+									"text/plain": {
+										"schema": {
+											"type": "string",
+											"example": "Windows-Azure-Blob/1.0 Microsoft-HTTPAPI/2.0"
+										},
+										"example": "Windows-Azure-Blob/1.0 Microsoft-HTTPAPI/2.0"
+									}
+								}
+							},
+							"x-ms-request-id": {
+								"content": {
+									"text/plain": {
+										"schema": {
+											"type": "string",
+											"example": "bff45952-701e-004b-304d-5c03c4000000"
+										},
+										"example": "bff45952-701e-004b-304d-5c03c4000000"
+									}
+								}
+							},
+							"x-ms-version": {
+								"content": {
+									"text/plain": {
+										"schema": {
+											"type": "string",
+											"example": "2009-09-19"
+										},
+										"example": "2009-09-19"
+									}
+								}
+							},
+							"x-ms-lease-status": {
+								"content": {
+									"text/plain": {
+										"schema": {
+											"type": "string",
+											"example": "unlocked"
+										},
+										"example": "unlocked"
+									}
+								}
+							},
+							"x-ms-blob-type": {
+								"content": {
+									"text/plain": {
+										"schema": {
+											"type": "string",
+											"example": "BlockBlob"
+										},
+										"example": "BlockBlob"
+									}
+								}
+							},
+							"Access-Control-Expose-Headers": {
+								"content": {
+									"text/plain": {
+										"schema": {
+											"type": "string",
+											"example": "x-ms-request-id,x-ms-version,x-ms-lease-status,x-ms-blob-type"
+										},
+										"example": "x-ms-request-id,x-ms-version,x-ms-lease-status,x-ms-blob-type"
+									}
+								}
+							},
+							"Access-Control-Allow-Origin": {
+								"content": {
+									"text/plain": {
+										"schema": {
+											"type": "string",
+											"example": "*"
+										},
+										"example": "*"
+									}
+								}
+							},
+							"Date": {
+								"content": {
+									"text/plain": {
+										"schema": {
+											"type": "string",
+											"example": "Sat, 30 Apr 2022 04:51:23 GMT"
+										},
+										"example": "Sat, 30 Apr 2022 04:51:23 GMT"
+									}
+								}
+							}
+						},
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/SuccessResponse"
+								},
+								"example": {
+									"data": {
+										"tabs": ["tab1", "tab2", "tab3"],
+										"tabdata": {
+											"tab1": {
+												"title": "Marketing",
+												"icon": "icon-marketing",
+												"active": ["plugin1", "plugin2", "plugin4"],
+												"disabled": ["plugin3"],
+												"inactive": ["plugin5", "plugin6"]
+											},
+											"tab2": {
+												"title": "Finance",
+												"icon": "icon-finance",
+												"active": ["plugin7", "plugin8"],
+												"disabled": ["plugin9"],
+												"inactive": ["plugin10"]
+											},
+											"tab3": {
+												"title": "Personnel",
+												"icon": "icon-people",
+												"active": ["plugin11"],
+												"disabled": ["plugin12"],
+												"inactive": ["plugin13"]
+											}
+										},
+										"plugins": {
+											"plugin1": {
+												"title": "Plugin 1",
+												"description": "Enim cillum tempor veniam do laboris excepteur laborum fugiat aute magna cillum."
+											},
+											"plugin2": {
+												"title": "Plugin 2",
+												"description": "Proident sunt consequat exercitation incididunt cupidatat quis ut ut eu ullamco nisi excepteur aliqua."
+											},
+											"plugin3": {
+												"title": "Plugin 3",
+												"description": "Amet ea quis qui reprehenderit laborum aute magna incididunt et dolore."
+											},
+											"plugin4": {
+												"title": "Plugin 4",
+												"description": "Sunt culpa labore consequat eu veniam laborum."
+											},
+											"plugin5": {
+												"title": "Plugin 5",
+												"description": "Proident laborum sint nisi enim non aliqua incididunt dolor voluptate tempor."
+											},
+											"plugin6": {
+												"title": "Plugin 6",
+												"description": "Qui cillum velit elit incididunt excepteur nostrud occaecat."
+											},
+											"plugin7": {
+												"title": "Plugin 7",
+												"description": "Culpa excepteur aliquip adipisicing sunt sunt proident aute eiusmod."
+											},
+											"plugin8": {
+												"title": "Plugin 8",
+												"description": "Eiusmod ex labore cillum elit."
+											},
+											"plugin9": {
+												"title": "Plugin 9",
+												"description": "Ut sit sit fugiat qui ullamco ea ea id qui esse magna."
+											},
+											"plugin10": {
+												"title": "Plugin 10",
+												"description": "Aliqua tempor nostrud occaecat enim nulla proident nostrud enim adipisicing pariatur velit."
+											},
+											"plugin11": {
+												"title": "Plugin 11",
+												"description": "Consectetur sit amet velit cillum sunt cillum sunt."
+											},
+											"plugin12": {
+												"title": "Plugin 12",
+												"description": "Exercitation in aute ut ex aliqua ea."
+											},
+											"plugin13": {
+												"title": "Plugin 13",
+												"description": "Dolor laboris culpa ipsum aliqua velit mollit."
+											}
+										}
+									},
+									"errors": null
+								}
+							}
+						}
+					}
+				},
+				"deprecated": false
+			}
+		}
+	},
+	"components": {
+		"schemas": {
+			"SuccessResponse": {
+				"title": "SuccessResponse",
+				"required": ["data", "errors"],
+				"type": "object",
+				"properties": {
+					"data": {
+						"$ref": "#/components/schemas/Data"
+					},
+					"errors": {
+						"type": "string",
+						"nullable": true
+					}
+				},
+				"example": {
+					"data": {
+						"tabs": ["tab1", "tab2", "tab3"],
+						"tabdata": {
+							"tab1": {
+								"title": "Marketing",
+								"icon": "icon-marketing",
+								"active": ["plugin1", "plugin2", "plugin4"],
+								"disabled": ["plugin3"],
+								"inactive": ["plugin5", "plugin6"]
+							},
+							"tab2": {
+								"title": "Finance",
+								"icon": "icon-finance",
+								"active": ["plugin7", "plugin8"],
+								"disabled": ["plugin9"],
+								"inactive": ["plugin10"]
+							},
+							"tab3": {
+								"title": "Personnel",
+								"icon": "icon-people",
+								"active": ["plugin11"],
+								"disabled": ["plugin12"],
+								"inactive": ["plugin13"]
+							}
+						},
+						"plugins": {
+							"plugin1": {
+								"title": "Plugin 1",
+								"description": "Enim cillum tempor veniam do laboris excepteur laborum fugiat aute magna cillum."
+							},
+							"plugin2": {
+								"title": "Plugin 2",
+								"description": "Proident sunt consequat exercitation incididunt cupidatat quis ut ut eu ullamco nisi excepteur aliqua."
+							},
+							"plugin3": {
+								"title": "Plugin 3",
+								"description": "Amet ea quis qui reprehenderit laborum aute magna incididunt et dolore."
+							},
+							"plugin4": {
+								"title": "Plugin 4",
+								"description": "Sunt culpa labore consequat eu veniam laborum."
+							},
+							"plugin5": {
+								"title": "Plugin 5",
+								"description": "Proident laborum sint nisi enim non aliqua incididunt dolor voluptate tempor."
+							},
+							"plugin6": {
+								"title": "Plugin 6",
+								"description": "Qui cillum velit elit incididunt excepteur nostrud occaecat."
+							},
+							"plugin7": {
+								"title": "Plugin 7",
+								"description": "Culpa excepteur aliquip adipisicing sunt sunt proident aute eiusmod."
+							},
+							"plugin8": {
+								"title": "Plugin 8",
+								"description": "Eiusmod ex labore cillum elit."
+							},
+							"plugin9": {
+								"title": "Plugin 9",
+								"description": "Ut sit sit fugiat qui ullamco ea ea id qui esse magna."
+							},
+							"plugin10": {
+								"title": "Plugin 10",
+								"description": "Aliqua tempor nostrud occaecat enim nulla proident nostrud enim adipisicing pariatur velit."
+							},
+							"plugin11": {
+								"title": "Plugin 11",
+								"description": "Consectetur sit amet velit cillum sunt cillum sunt."
+							},
+							"plugin12": {
+								"title": "Plugin 12",
+								"description": "Exercitation in aute ut ex aliqua ea."
+							},
+							"plugin13": {
+								"title": "Plugin 13",
+								"description": "Dolor laboris culpa ipsum aliqua velit mollit."
+							}
+						}
+					},
+					"errors": null
+				}
+			},
+			"Data": {
+				"title": "Data",
+				"required": ["tabs", "tabdata", "plugins"],
+				"type": "object",
+				"properties": {
+					"tabs": {
+						"type": "array",
+						"items": {
+							"type": "string"
+						},
+						"description": ""
+					},
+					"tabdata": {
+						"$ref": "#/components/schemas/Tabdata"
+					},
+					"plugins": {
+						"$ref": "#/components/schemas/Plugins"
+					}
+				},
+				"example": {
+					"tabs": ["tab1", "tab2", "tab3"],
+					"tabdata": {
+						"tab1": {
+							"title": "Marketing",
+							"icon": "icon-marketing",
+							"active": ["plugin1", "plugin2", "plugin4"],
+							"disabled": ["plugin3"],
+							"inactive": ["plugin5", "plugin6"]
+						},
+						"tab2": {
+							"title": "Finance",
+							"icon": "icon-finance",
+							"active": ["plugin7", "plugin8"],
+							"disabled": ["plugin9"],
+							"inactive": ["plugin10"]
+						},
+						"tab3": {
+							"title": "Personnel",
+							"icon": "icon-people",
+							"active": ["plugin11"],
+							"disabled": ["plugin12"],
+							"inactive": ["plugin13"]
+						}
+					},
+					"plugins": {
+						"plugin1": {
+							"title": "Plugin 1",
+							"description": "Enim cillum tempor veniam do laboris excepteur laborum fugiat aute magna cillum."
+						},
+						"plugin2": {
+							"title": "Plugin 2",
+							"description": "Proident sunt consequat exercitation incididunt cupidatat quis ut ut eu ullamco nisi excepteur aliqua."
+						},
+						"plugin3": {
+							"title": "Plugin 3",
+							"description": "Amet ea quis qui reprehenderit laborum aute magna incididunt et dolore."
+						},
+						"plugin4": {
+							"title": "Plugin 4",
+							"description": "Sunt culpa labore consequat eu veniam laborum."
+						},
+						"plugin5": {
+							"title": "Plugin 5",
+							"description": "Proident laborum sint nisi enim non aliqua incididunt dolor voluptate tempor."
+						},
+						"plugin6": {
+							"title": "Plugin 6",
+							"description": "Qui cillum velit elit incididunt excepteur nostrud occaecat."
+						},
+						"plugin7": {
+							"title": "Plugin 7",
+							"description": "Culpa excepteur aliquip adipisicing sunt sunt proident aute eiusmod."
+						},
+						"plugin8": {
+							"title": "Plugin 8",
+							"description": "Eiusmod ex labore cillum elit."
+						},
+						"plugin9": {
+							"title": "Plugin 9",
+							"description": "Ut sit sit fugiat qui ullamco ea ea id qui esse magna."
+						},
+						"plugin10": {
+							"title": "Plugin 10",
+							"description": "Aliqua tempor nostrud occaecat enim nulla proident nostrud enim adipisicing pariatur velit."
+						},
+						"plugin11": {
+							"title": "Plugin 11",
+							"description": "Consectetur sit amet velit cillum sunt cillum sunt."
+						},
+						"plugin12": {
+							"title": "Plugin 12",
+							"description": "Exercitation in aute ut ex aliqua ea."
+						},
+						"plugin13": {
+							"title": "Plugin 13",
+							"description": "Dolor laboris culpa ipsum aliqua velit mollit."
+						}
+					}
+				}
+			},
+			"Tabdata": {
+				"title": "Tabdata",
+				"required": ["tab1", "tab2", "tab3"],
+				"type": "object",
+				"properties": {
+					"tab1": {
+						"$ref": "#/components/schemas/Tab1"
+					},
+					"tab2": {
+						"$ref": "#/components/schemas/Tab1"
+					},
+					"tab3": {
+						"$ref": "#/components/schemas/Tab1"
+					}
+				},
+				"example": {
+					"tab1": {
+						"title": "Marketing",
+						"icon": "icon-marketing",
+						"active": ["plugin1", "plugin2", "plugin4"],
+						"disabled": ["plugin3"],
+						"inactive": ["plugin5", "plugin6"]
+					},
+					"tab2": {
+						"title": "Finance",
+						"icon": "icon-finance",
+						"active": ["plugin7", "plugin8"],
+						"disabled": ["plugin9"],
+						"inactive": ["plugin10"]
+					},
+					"tab3": {
+						"title": "Personnel",
+						"icon": "icon-people",
+						"active": ["plugin11"],
+						"disabled": ["plugin12"],
+						"inactive": ["plugin13"]
+					}
+				}
+			},
+			"Tab1": {
+				"title": "Tab1",
+				"required": ["title", "icon", "active", "disabled", "inactive"],
+				"type": "object",
+				"properties": {
+					"title": {
+						"type": "string"
+					},
+					"icon": {
+						"type": "string"
+					},
+					"active": {
+						"type": "array",
+						"items": {
+							"type": "string"
+						},
+						"description": ""
+					},
+					"disabled": {
+						"type": "array",
+						"items": {
+							"type": "string"
+						},
+						"description": ""
+					},
+					"inactive": {
+						"type": "array",
+						"items": {
+							"type": "string"
+						},
+						"description": ""
+					}
+				},
+				"example": {
+					"title": "Marketing",
+					"icon": "icon-marketing",
+					"active": ["plugin1", "plugin2", "plugin4"],
+					"disabled": ["plugin3"],
+					"inactive": ["plugin5", "plugin6"]
+				}
+			},
+			"Plugins": {
+				"title": "Plugins",
+				"required": [
+					"plugin1",
+					"plugin2",
+					"plugin3",
+					"plugin4",
+					"plugin5",
+					"plugin6",
+					"plugin7",
+					"plugin8",
+					"plugin9",
+					"plugin10",
+					"plugin11",
+					"plugin12",
+					"plugin13"
+				],
+				"type": "object",
+				"properties": {
+					"plugin1": {
+						"$ref": "#/components/schemas/Plugin1"
+					},
+					"plugin2": {
+						"$ref": "#/components/schemas/Plugin1"
+					},
+					"plugin3": {
+						"$ref": "#/components/schemas/Plugin1"
+					},
+					"plugin4": {
+						"$ref": "#/components/schemas/Plugin1"
+					},
+					"plugin5": {
+						"$ref": "#/components/schemas/Plugin1"
+					},
+					"plugin6": {
+						"$ref": "#/components/schemas/Plugin1"
+					},
+					"plugin7": {
+						"$ref": "#/components/schemas/Plugin1"
+					},
+					"plugin8": {
+						"$ref": "#/components/schemas/Plugin1"
+					},
+					"plugin9": {
+						"$ref": "#/components/schemas/Plugin1"
+					},
+					"plugin10": {
+						"$ref": "#/components/schemas/Plugin1"
+					},
+					"plugin11": {
+						"$ref": "#/components/schemas/Plugin1"
+					},
+					"plugin12": {
+						"$ref": "#/components/schemas/Plugin1"
+					},
+					"plugin13": {
+						"$ref": "#/components/schemas/Plugin1"
+					}
+				},
+				"example": {
+					"plugin1": {
+						"title": "Plugin 1",
+						"description": "Enim cillum tempor veniam do laboris excepteur laborum fugiat aute magna cillum."
+					},
+					"plugin2": {
+						"title": "Plugin 2",
+						"description": "Proident sunt consequat exercitation incididunt cupidatat quis ut ut eu ullamco nisi excepteur aliqua."
+					},
+					"plugin3": {
+						"title": "Plugin 3",
+						"description": "Amet ea quis qui reprehenderit laborum aute magna incididunt et dolore."
+					},
+					"plugin4": {
+						"title": "Plugin 4",
+						"description": "Sunt culpa labore consequat eu veniam laborum."
+					},
+					"plugin5": {
+						"title": "Plugin 5",
+						"description": "Proident laborum sint nisi enim non aliqua incididunt dolor voluptate tempor."
+					},
+					"plugin6": {
+						"title": "Plugin 6",
+						"description": "Qui cillum velit elit incididunt excepteur nostrud occaecat."
+					},
+					"plugin7": {
+						"title": "Plugin 7",
+						"description": "Culpa excepteur aliquip adipisicing sunt sunt proident aute eiusmod."
+					},
+					"plugin8": {
+						"title": "Plugin 8",
+						"description": "Eiusmod ex labore cillum elit."
+					},
+					"plugin9": {
+						"title": "Plugin 9",
+						"description": "Ut sit sit fugiat qui ullamco ea ea id qui esse magna."
+					},
+					"plugin10": {
+						"title": "Plugin 10",
+						"description": "Aliqua tempor nostrud occaecat enim nulla proident nostrud enim adipisicing pariatur velit."
+					},
+					"plugin11": {
+						"title": "Plugin 11",
+						"description": "Consectetur sit amet velit cillum sunt cillum sunt."
+					},
+					"plugin12": {
+						"title": "Plugin 12",
+						"description": "Exercitation in aute ut ex aliqua ea."
+					},
+					"plugin13": {
+						"title": "Plugin 13",
+						"description": "Dolor laboris culpa ipsum aliqua velit mollit."
+					}
+				}
+			},
+			"Plugin1": {
+				"title": "Plugin1",
+				"required": ["title", "description"],
+				"type": "object",
+				"properties": {
+					"title": {
+						"type": "string"
+					},
+					"description": {
+						"type": "string"
+					}
+				},
+				"example": {
+					"title": "Plugin 1",
+					"description": "Enim cillum tempor veniam do laboris excepteur laborum fugiat aute magna cillum."
+				}
+			}
+		}
+	},
+	"tags": [
+		{
+			"name": "Plugins"
+		}
+	]
+}

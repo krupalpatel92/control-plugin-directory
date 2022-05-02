@@ -1,12 +1,26 @@
-# Getting Started with Create React App
+## Custom Scripts
+Following command can be used to maintain project and API Mock
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+### 1) `yarn fix:preBuild`
+Needs to execute before all git add/commit to fix Linting, TS, and SCSS issue and formatting.
+All below command will be executed when run `fix:preBuild`
+- `yarn fix:style`
+- `yarn fix:lint`
+- `yarn fix:esLint`
+### 2) `yarn local:apiGenerator`
+Run this command to create/update the API mock as per the Swagger/OpenAPI documentation in local from local document.
+
+### 3) `yarn live:apiGenerator`
+Run this command to create/update the API mock as per the Swagger/OpenAPI documentation in local from live document.
+
+
+
 
 ## Available Scripts
 
 In the project directory, you can run:
 
-### `npm start`
+### `yarn start`
 
 Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
@@ -14,12 +28,12 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 The page will reload if you make edits.\
 You will also see any lint errors in the console.
 
-### `npm test`
+### `yarn test`
 
 Launches the test runner in the interactive watch mode.\
 See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `npm run build`
+### `yarn build`
 
 Builds the app for production to the `build` folder.\
 It correctly bundles React in production mode and optimizes the build for the best performance.
@@ -29,7 +43,7 @@ Your app is ready to be deployed!
 
 See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `npm run eject`
+### `yarn eject`
 
 **Note: this is a one-way operation. Once you `eject`, you can’t go back!**
 
