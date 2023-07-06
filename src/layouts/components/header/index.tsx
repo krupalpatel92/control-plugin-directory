@@ -24,7 +24,7 @@ const Header: React.FC = () => {
 		<div className={styles.headerWrp}>
 			<div className={styles.logo}>
 				<Link to='/'>
-					<img src={Logo} alt='DataGuard' />
+					LOGO HERE
 				</Link>
 			</div>
 			<div className={styles.menuWrp}>
