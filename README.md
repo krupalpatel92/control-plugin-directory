@@ -1,6 +1,9 @@
 ## Custom Scripts
 Following command can be used to maintain project and API Mock
 
+## URL
+https://prdmanager.netlify.app/
+
 ### 1) `yarn fix:preBuild`
 Needs to execute before all git add/commit to fix Linting, TS, and SCSS issue and formatting.
 All below command will be executed when run `fix:preBuild`
